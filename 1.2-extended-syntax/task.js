@@ -15,9 +15,7 @@ function getResult(a, b, c) {
         let firstX = (-b) / 2 * a;
         let x = [firstX]
         return x;
-    }
-    // return x;
-    
+    }    
     
 }
 
