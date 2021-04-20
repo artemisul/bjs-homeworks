@@ -21,7 +21,7 @@ function sayHello(userName) {
     // реализуйте здесь задание №2
 	let myName = userName;
 
-	let message = `Привет, мир! Меня зовут ${myName}.`
+	let message = `Привет, мир! Меня зовут ${myName}`
     
 	return message// ваш ответ;
 }
@@ -29,6 +29,11 @@ function sayHello(userName) {
 function calculateFormula() {
     
 	// реализуйте здесь задание №3
+	let x = 2;
+	let y = 22;
+	let z = 0;
+	let result = x * y + 5 * z + x - 1
+
     
-    return // ваш ответ;
+    return result// ваш ответ;
 }
