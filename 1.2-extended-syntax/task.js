@@ -45,5 +45,16 @@ function getAverageMark(marks) {
 
 function askDrink(name, dateOfBirthday) {
   // код для задачи №3 писать здесь
+  let today = new Date();
+  let year = today.getFullYear();
+  let birthday = dateOfBirthday.getFullYear();
+  let tooOld = year - birthday;
+  let result ='';
+  if (tooOld >= 18) {
+      result = `Не желаете ли олд-фэшн, ${name}?`
+  } else {
+      result = `Сожалею, ${name}, но я не могу вам продать алкоголь. Могу предложить вам замечательный клюквенный компот!`
+  }
+  return result;
   // return result;
 }
