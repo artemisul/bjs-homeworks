@@ -1,6 +1,6 @@
 'use strict';
 
-// Зажача 1
+// Задача 1
 
 console.clear();
 
@@ -18,3 +18,32 @@ let getTotalDamage = () => weapons.map(weapon => weapon.getDamage ()).reduce((su
 
 // Задача 2
 
+function sleep(milliseconds) {
+    let e = new Date().getTime() + milliseconds;
+    while (new Date().getTime() <= e) {}
+}
+
+function sum(...args) {
+    sleep(100);    
+    return args.reduce((sum, arg) => {
+        return sum += +arg;
+    }, 0) 
+}
+
+let compareArrays = (arr1, arr2) => arr1.length === arr2.length && arr1.every((n, i) => n === arr2[i]);
+
+function memorize(fn, limit) {
+    let memory = [];
+    return function (...args) {
+        let findResult = memory.find((i) => compareArrays(i.args, args));
+        if (findResult) {
+            return findResult.result;
+        }
+        let result = fn(...args);
+        if (memory.length === limit) {
+            memory.unshift();
+        }
+        memory.push({args, result});
+        return result;
+    }
+}
